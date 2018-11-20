@@ -1,0 +1,1 @@
+docker run --name kafka -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=<程序连接的IP, 例如192.168.1.122> --env ADVERTISED_PORT=9092 -d spotify/kafka     

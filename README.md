@@ -1,2 +1,2 @@
 # miscellaneous
-一些杂七杂八的案例代码
+杂七杂八的案例代码(miscellaneous) -- qingmg's

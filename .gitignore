@@ -21,3 +21,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea
+miscellaneous.iml
+another/another.iml
+another/target
+common/common.iml
+common/target
+kafka/kafka.iml
+kafka/target
+quartz-cluster/quartz-cluster.iml
+quartz-cluster/target
+soap/soap.iml
+soap/target
