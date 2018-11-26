@@ -33,3 +33,5 @@ quartz-cluster/quartz-cluster.iml
 quartz-cluster/target
 soap/soap.iml
 soap/target
+baidu-voice/baidu-voice.iml
+baidu-voice/target
