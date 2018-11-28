@@ -1,11 +1,11 @@
 package cn.jxdog.miscellaneous.baidu.voice.core.common;
 
+import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.sound.sampled.*;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 
 /**
@@ -16,41 +16,57 @@ import java.util.Date;
  */
 @Slf4j
 public class MusicPlayer {
-    private AudioFormat audioFormat;
-    private SourceDataLine sourceDataLine;
-    private DataLine.Info dataLine_info;
-    private AudioInputStream audioInputStream;
 
-    public MusicPlayer(byte[] data) {
+    private static MusicPlayer instance;
+
+    /**
+     * 实现单例
+     *
+     * @return
+     */
+    public static MusicPlayer getInstance() {
+        if (instance == null) {
+            synchronized (MusicPlayer.class) {
+                if (instance == null) {
+                    return new MusicPlayer();
+                }
+            }
+        }
+        return instance;
+    }
+
+    public void play(byte[] data) {
         try {
-            audioInputStream = AudioSystem.getAudioInputStream(new ByteArrayInputStream(data));
-            audioFormat = audioInputStream.getFormat();
-            dataLine_info = new DataLine.Info(SourceDataLine.class, audioFormat);
-            sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLine_info);
+            @Cleanup AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new ByteArrayInputStream(data));
+            play(audioInputStream);
         } catch (Exception e) {
-            log.error("{}: 初始化 MusicPlayer 失败，错误信息: ", new Date(), e);
+            log.error("{}: MusicPlayer 播放失败，错误信息: ", new Date(), e);
         }
     }
 
-    public MusicPlayer(String path) throws LineUnavailableException, UnsupportedAudioFileException, IOException {
-        audioInputStream = AudioSystem.getAudioInputStream(new File(path));
-        audioFormat = audioInputStream.getFormat();
-        dataLine_info = new DataLine.Info(SourceDataLine.class, audioFormat);
-        sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLine_info);
+    public void play(String path) {
+        try {
+            @Cleanup AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(path));
+            play(audioInputStream);
+        } catch (Exception e) {
+            log.error("{}: MusicPlayer 播放失败，错误信息: ", new Date(), e);
+        }
     }
 
-    public void play() {
+    public void play(AudioInputStream audioInputStream) {
         try {
+            AudioFormat audioFormat = audioInputStream.getFormat();
+            DataLine.Info dataLine_info = new DataLine.Info(SourceDataLine.class, audioFormat);
+            @Cleanup SourceDataLine sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLine_info);
+
             byte[] b = new byte[1024];
-            int len = 0;
+            int len;
             sourceDataLine.open(audioFormat, 1024);
             sourceDataLine.start();
             while ((len = audioInputStream.read(b)) > 0) {
                 sourceDataLine.write(b, 0, len);
             }
-            audioInputStream.close();
             sourceDataLine.drain();
-            sourceDataLine.close();
         } catch (Exception e) {
             log.error("{}: MusicPlayer 播放失败，错误信息: ", new Date(), e);
         }

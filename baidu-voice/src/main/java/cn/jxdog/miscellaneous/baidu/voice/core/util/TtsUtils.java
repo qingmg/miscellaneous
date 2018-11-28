@@ -6,11 +6,15 @@ import com.baidu.aip.speech.AipSpeech;
 import com.baidu.aip.speech.TtsResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
-import sun.audio.AudioPlayer;
 
-import java.io.*;
 import java.util.HashMap;
 
+/**
+ * @Description Tts在线合成语音工具类
+ * @Author vhs
+ * @Date 2018/11/23
+ * @Version 1.0
+ */
 @Slf4j
 public class TtsUtils {
     /**
@@ -68,7 +72,7 @@ public class TtsUtils {
         byte[] data = res.getData();
         if (data != null) {
             /*AudioPlayer.player.start(new ByteArrayInputStream(data));*/
-            new MusicPlayer(data).play();
+            MusicPlayer.getInstance().play(data);
         }
 
         JSONObject res1 = res.getResult();
