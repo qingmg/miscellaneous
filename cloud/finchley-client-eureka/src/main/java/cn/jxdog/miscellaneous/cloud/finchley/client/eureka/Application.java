@@ -1,4 +1,4 @@
-package cn.jxdog.miscellaneous.cloud.finchley.eureka.client;
+package cn.jxdog.miscellaneous.cloud.finchley.client.eureka;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

@@ -38,7 +38,7 @@ baidu-voice/target
 baidu-voice/src/main/java/cn/jxdog/miscellaneous/baidu/voice/core/common/Constant.java
 cloud/cloud.iml
 cloud/target
-cloud/finchley-eureka-server/finchley-eureka-server.iml
-cloud/finchley-eureka-server/target
-cloud/finchley-eureka-client/finchley-eureka-client.iml
-cloud/finchley-eureka-client/target
+cloud/finchley-server-eureka/finchley-server-eureka.iml
+cloud/finchley-server-eureka/target
+cloud/finchley-client-eureka/finchley-client-eureka.iml
+cloud/finchley-client-eureka/target
