@@ -26,15 +26,14 @@
     </modules>
 
     <properties>
-        <!-- 环境 -->
-        <java.version>1.8</java.version>
         <!-- 构建编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- 环境 -->
+        <java.version>1.8</java.version>
 
         <commons-lang3.version>3.7</commons-lang3.version>
         <fastjson.version>1.2.47</fastjson.version>
-        <junit.version>4.12</junit.version>
         <sitemesh.version>3.0.1</sitemesh.version>
     </properties>
 
@@ -50,7 +49,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
+            <version>${lombok.version}</version>
         </dependency>
 
         <!-- Web -->
@@ -107,11 +106,19 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-war-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<warName>web</warName>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <warName>web</warName>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
