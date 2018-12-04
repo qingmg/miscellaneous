@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.jxdog.miscellaneous.cloud</groupId>
-    <artifactId>finchley-eureka-server</artifactId>
+    <artifactId>finchley-server-eureka</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
 
-    <name>finchley-eureka-server</name>
+    <name>finchley-server-eureka</name>
     <description>Eureka Server project for Spring Cloud Finchley</description>
 
     <parent>

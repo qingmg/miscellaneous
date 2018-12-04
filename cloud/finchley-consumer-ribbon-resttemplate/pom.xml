@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.jxdog.miscellaneous.cloud</groupId>
-    <artifactId>finchley-client-eureka</artifactId>
+    <artifactId>finchley-consumer-ribbon-resttemplate</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
 
-    <name>finchley-client-eureka</name>
-    <description>Eureka Client project for Spring Cloud</description>
+    <name>finchley-server-eureka</name>
+    <description>consumer project by Ribbon and RestTemplate for Spring Cloud Finchley</description>
 
     <parent>
         <groupId>cn.jxdog.miscellaneous</groupId>
@@ -35,11 +36,10 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
-        <!-- 将 内置tomcat 设置运行时使用(打包时不拥有) -->
+        <!-- Ribbon -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
     </dependencies>
 

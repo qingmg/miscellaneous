@@ -29,4 +29,9 @@ public class Application {
     public String show() {
         return "this is eureka-client, port is " + port;
     }
+
+    @RequestMapping("/hello")
+    public String hello(String name) {
+        return name + " is say hello to you, are you happy?";
+    }
 }

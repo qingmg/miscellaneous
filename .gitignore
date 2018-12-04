@@ -42,3 +42,5 @@ cloud/finchley-server-eureka/finchley-server-eureka.iml
 cloud/finchley-server-eureka/target
 cloud/finchley-client-eureka/finchley-client-eureka.iml
 cloud/finchley-client-eureka/target
+cloud/finchley-consumer-ribbon-resttemplate/finchley-consumer-ribbon-resttemplate.iml
+cloud/finchley-consumer-ribbon-resttemplate/target

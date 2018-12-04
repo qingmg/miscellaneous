@@ -12,7 +12,7 @@ public enum Constant {
      * API_KEY
      * SECRET_KEY
      */
-    APP_ID("***"), API_KEY("***"), SECRET_KEY("***");
+    APP_ID("14907780"), API_KEY("pvjQTqq9hsUu055OTXtw7owh"), SECRET_KEY("KWSGV2kT040ySFvBQHfUsxiN2NPBf3BB");
 
     /**
      * 成员变量, 值
