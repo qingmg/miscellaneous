@@ -16,6 +16,7 @@
         <module>finchley-server-eureka</module>
         <module>finchley-client-eureka</module>
         <module>finchley-consumer-ribbon-resttemplate</module>
+        <module>finchley-consumer-feign</module>
     </modules>
 
     <properties>
