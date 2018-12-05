@@ -18,10 +18,12 @@ public class HelloServiceImpl implements HelloService {
     @Autowired
     RestTemplate restTemplate;
 
+    @Override
     public String show() {
         return restTemplate.getForObject("http://EUREKA-CLIENT/show", String.class);
     }
 
+    @Override
     public String sayHello(final String name) {
         return restTemplate.postForObject("http://EUREKA-CLIENT/hello",new LinkedMultiValueMap<String, Object>() {{
             add("name", name);
