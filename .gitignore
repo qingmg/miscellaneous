@@ -35,7 +35,7 @@ soap/soap.iml
 soap/target
 baidu-voice/baidu-voice.iml
 baidu-voice/target
-baidu-voice/src/main/java/cn/jxdog/miscellaneous/baidu/voice/core/common/Constant.java
+baidu-voice/src/main/java/cn/qingmg/miscellaneous/baidu/voice/core/common/Constant.java
 cloud/cloud.iml
 cloud/target
 cloud/finchley-server-eureka/finchley-server-eureka.iml

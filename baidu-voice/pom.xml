@@ -8,7 +8,7 @@
 
     <parent>
         <artifactId>parent</artifactId>
-        <groupId>cn.jxdog.miscellaneous</groupId>
+        <groupId>cn.qingmg.miscellaneous</groupId>
         <version>1.0.0</version>
     </parent>
 

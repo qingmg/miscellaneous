@@ -98,7 +98,7 @@
     <!--</springProfile>-->
 
     <!--<springProfile name="online">-->
-        <!--<logger name="cn.jxdog.learning.springboot.cluster" additivity="true">-->
+        <!--<logger name="cn.qingmg.learning.springboot.cluster" additivity="true">-->
             <!--<level value="INFO"/>-->
         <!--</logger>-->
     <!--</springProfile>-->
@@ -113,7 +113,7 @@
         <appender-ref ref="WARN-APPENDER"/>
         <appender-ref ref="ERROR-APPENDER"/>
     </root>
-    <logger name="cn.jxdog" additivity="true">
+    <logger name="cn.qingmg" additivity="true">
         <level value="INFO"/>
         <appender-ref ref="STDOUT"/>
     </logger>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.jxdog.miscellaneous.cloud</groupId>
+    <groupId>cn.qingmg.miscellaneous.cloud</groupId>
     <artifactId>finchley-server-eureka</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
@@ -13,7 +13,7 @@
     <description>Eureka Server project for Spring Cloud Finchley</description>
 
     <parent>
-        <groupId>cn.jxdog.miscellaneous</groupId>
+        <groupId>cn.qingmg.miscellaneous</groupId>
         <artifactId>cloud</artifactId>
         <version>1.0.0</version>
     </parent>

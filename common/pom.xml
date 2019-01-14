@@ -6,7 +6,7 @@
     <artifactId>common</artifactId>
 
     <parent>
-        <groupId>cn.jxdog.miscellaneous</groupId>
+        <groupId>cn.qingmg.miscellaneous</groupId>
         <artifactId>parent</artifactId>
         <version>1.0.0</version>
     </parent>
