@@ -1,0 +1,21 @@
+server:
+  port: 10005
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # 仓库地址
+          uri: https://github.com/qingmg/miscellaneous.git
+          # 仓库路径
+          search-paths: cloud/res-prop
+          # 如果需要登陆必有这句
+#          strict-host-key-checking: true
+          # 访问 git 仓库用户名
+          username:
+          # 访问 git 仓库密码
+          password:
+      # 仓库分支
+      label: master

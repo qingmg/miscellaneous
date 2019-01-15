@@ -18,6 +18,8 @@
         <module>finchley-consumer-ribbon-resttemplate</module>
         <module>finchley-consumer-feign</module>
         <module>finchley-zuul</module>
+        <module>finchley-config-server</module>
+        <module>finchley-config-client</module>
     </modules>
 
     <properties>

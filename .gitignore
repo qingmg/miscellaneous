@@ -48,3 +48,7 @@ cloud/finchley-consumer-feign/finchley-consumer-feign.iml
 cloud/finchley-consumer-feign/target
 cloud/finchley-zuul/finchley-zuul.iml
 cloud/finchley-zuul/target
+cloud/finchley-config-server/finchley-config-server.iml
+cloud/finchley-config-server/target
+cloud/finchley-config-client/finchley-config-client.iml
+cloud/finchley-config-client/target
