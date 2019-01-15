@@ -1,0 +1,17 @@
+server:
+  port: 10004
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.123:8888/eureka/
+zuul:
+  routes:
+    ribbonApi:
+      path: /ribbon/*
+      serviceId: comsumer-ribbon
+    feignApi:
+      path: /feign/*
+      serviceId: consumer-feign

@@ -46,3 +46,5 @@ cloud/finchley-consumer-ribbon-resttemplate/finchley-consumer-ribbon-resttemplat
 cloud/finchley-consumer-ribbon-resttemplate/target
 cloud/finchley-consumer-feign/finchley-consumer-feign.iml
 cloud/finchley-consumer-feign/target
+cloud/finchley-zuul/finchley-zuul.iml
+cloud/finchley-zuul/target
