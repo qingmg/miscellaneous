@@ -6,6 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,12 +16,14 @@ import org.springframework.web.client.RestTemplate;
  *      当注册中心为 Eureka 时，使用 @EnableEurekaClient
  *      当注册中心为 其他 时，则使用 @EnableDiscoveryClient
  *  @LoadBalanced: 为注解的 RestTemplate 开启负载均衡
+ *  @EnableHystrix: 注解开启Hystrix：
  * @Author vhs
  * @Date 2018-12-03
  * @Version 1.0
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableHystrix
 public class Application extends SpringBootServletInitializer {
 
     @Bean
