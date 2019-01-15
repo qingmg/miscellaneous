@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date 2018-12-05
  * @Version 1.0
  */
-@FeignClient(value = "EUREKA-CLIENT")
+@FeignClient(value = "EUREKA-CLIENT", fallback = HelloServiceImplForHystrix.class)
 public interface HelloService {
 
     /**
