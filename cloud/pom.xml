@@ -20,6 +20,7 @@
         <module>finchley-zuul</module>
         <module>finchley-config-server</module>
         <module>finchley-config-client</module>
+        <module>finchley-config-client-bus</module>
     </modules>
 
     <properties>

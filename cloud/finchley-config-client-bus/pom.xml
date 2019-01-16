@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.qingmg.miscellaneous.cloud</groupId>
-    <artifactId>finchley-config-server</artifactId>
+    <artifactId>finchley-config-client-bus</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>finchley-config-server</name>
-    <description>Config server project for Spring Cloud Finchley</description>
+    <name>finchley-config-client-bus</name>
+    <description>Config client project with bus for Spring Cloud Finchley</description>
 
     <parent>
         <groupId>cn.qingmg.miscellaneous</groupId>
@@ -24,16 +24,26 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- Config Server -->
+        <!-- Config Client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-
+        <!-- actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <!-- Eureka Client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <!-- Bus amqp -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
     </dependencies>
+
 </project>
