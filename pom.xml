@@ -23,6 +23,7 @@
         <module>kafka</module>
         <module>baidu-voice</module>
         <module>cloud</module>
+        <module>design-patterns</module>
     </modules>
 
     <properties>

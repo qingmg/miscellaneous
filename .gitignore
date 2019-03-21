@@ -54,3 +54,5 @@ cloud/finchley-config-client/finchley-config-client.iml
 cloud/finchley-config-client/target
 cloud/finchley-config-client-bus/finchley-config-client-bus.iml
 cloud/finchley-config-client-bus/target
+design-patterns/design-patterns.iml
+design-patterns/target
