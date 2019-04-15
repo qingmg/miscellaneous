@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- mybatis 逆向生成 xml 配置 -->
+<generatorConfiguration>
+    <properties resource="jdbc.properties" />
+    <context id="mysql" targetRuntime="MyBatis3">
+        <!-- 生成的 pojo, 将 implements Serializable -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true: 是 false: 否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!-- 数据库连接信息 -->
+        <jdbcConnection
+                driverClass="${jdbc.driver}" connectionURL="${jdbc.url}"
+                userId="${jdbc.user}" password="${jdbc.pass}" />
+
+        <!-- 默认为 false: 把 JDBC DECIMAL 和 NUMBER 类型解析为 Integer -->
+        <!--       true : 把 JDBC DECIMAL 和 NUMBER 类型解析为 java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- 生成 Model 模型, 对应的包路径, 以及文件存放路径{targetProject} -->
+        <!-- targetProject 可以指定具体的路径, 如 ./src/main/java -->
+        <!-- 用 Maven 来生成的话, 会生成在 target/generatord-source 目录下 -->
+        <!-- <javaModelGenerator targetPackage="cn.qingmg.miscellaneous.shiro.pojo" targetProject="MAVEN" /> -->
+        <javaModelGenerator targetPackage="cn.qingmg.miscellaneous.shiro.pojo" targetProject="F:/vhaisong/miscellaneous/shiro/src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <!-- 从数据库返回的值将被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- mapper.xml -->
+        <sqlMapGenerator targetPackage="mappers" targetProject="F:/vhaisong/miscellaneous/shiro/src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- 对应的 Mapper 接口类文件 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.qingmg.miscellaneous.shiro.dao"
+                             targetProject="F:/vhaisong/miscellaneous/shiro/src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        
+        <table tableName="sys_user" domainObjectName="SysUser" />
+    </context>
+</generatorConfiguration>
