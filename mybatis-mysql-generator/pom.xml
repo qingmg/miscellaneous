@@ -29,6 +29,13 @@
             <version>${mybatis.version}</version>
         </dependency>
 
+        <!-- tk.mapper -->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>${boot-tk-mapper.version}</version>
+        </dependency>
+
         <!-- Mybatis generator -->
         <dependency>
             <groupId>org.mybatis.generator</groupId>

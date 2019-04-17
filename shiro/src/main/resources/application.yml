@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/miscellaneous_shiro?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: root
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+  flyway:
+    baseline-on-migrate: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mappers/*Mapper.xml
+  type-aliases-package: cn.qingmg.miscellaneous.shiro.pojo
+mapper:
+  not-empty: false
+  identity: MYSQL
