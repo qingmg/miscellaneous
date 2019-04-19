@@ -1,10 +1,13 @@
 package cn.qingmg.miscellaneous.shiro.config;
 
+import cn.qingmg.miscellaneous.common.entity.Criteria;
 import cn.qingmg.miscellaneous.shiro.pojo.SysUser;
 import cn.qingmg.miscellaneous.shiro.service.SysUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.crypto.hash.Hash;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,13 +65,17 @@ public class MyRealm extends AuthorizingRealm {
             throw new AccountException("密码为空");
         }
 
-        SysUser user = userService.queryByUsername(username);
+        Criteria criteria = new Criteria();
+        criteria.put("username", username);
+        SysUser user = userService.query2OneRecord(criteria);
         if (user == null) {
             throw new UnknownAccountException("账号不存在");
         }
-        if (!user.getPassword().equals(password)) {
+        String password_enc = new SimpleHash("SHA1", password, Hash.Util.bytes(username), 1024).toHex();
+        if (!user.getPassword().equals(password_enc)) {
             throw new IncorrectCredentialsException("密码错误");
         }
+
         if (user.getLockStatus() == 1) {
             throw new LockedAccountException("账号被锁, 请联系管理员");
         }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.qingmg.miscellaneous.shiro.dao.SysUserMapper">
+<mapper namespace="cn.qingmg.miscellaneous.shiro.mapper.SysUserMapper">
 
     <resultMap id="BaseResultMap" type="cn.qingmg.miscellaneous.shiro.pojo.SysUser">
         <!--
@@ -22,11 +22,44 @@
         user_id, username, `password`, nick_name, real_name, `status`, lock_status
     </sql>
 
-    <select id="queryByUsername" parameterType="Object" resultMap="BaseResultMap">
+    <sql id="Base_Where_List">
+        <if test="@cn.qingmg.miscellaneous.common.util.CommonUtils@isNotNullAndEmpty(condition.userId)">
+            AND user_id = #{condition.userId}
+        </if>
+        <if test="@cn.qingmg.miscellaneous.common.util.CommonUtils@isNotNullAndEmpty(condition.username)">
+            AND username = #{condition.username}
+        </if>
+        <if test="@cn.qingmg.miscellaneous.common.util.CommonUtils@isNotNullAndEmpty(condition.password)">
+            AND password = #{condition.password}
+        </if>
+        <if test="@cn.qingmg.miscellaneous.common.util.CommonUtils@isNotNullAndEmpty(condition.nickName)">
+            AND nick_name = #{condition.nickName}
+        </if>
+        <if test="@cn.qingmg.miscellaneous.common.util.CommonUtils@isNotNullAndEmpty(condition.realName)">
+            AND real_name = #{condition.realName}
+        </if>
+        <if test="@cn.qingmg.miscellaneous.common.util.CommonUtils@isNotNullAndEmpty(condition.status)">
+            AND status = #{condition.status}
+        </if>
+        <if test="@cn.qingmg.miscellaneous.common.util.CommonUtils@isNotNullAndEmpty(condition.lockStatus)">
+            AND lock_status = #{condition.lockStatus}
+        </if>
+    </sql>
+
+    <select id="query2List" resultMap="BaseResultMap" parameterType="Object">
         SELECT
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         FROM sys_user
         WHERE 1 = 1
-        AND username = #{username}
+        <include refid="Base_Where_List"/>
+    </select>
+
+    <select id="query2OneRecord" resultMap="BaseResultMap" parameterType="Object">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM sys_user
+        WHERE 1 = 1
+        <include refid="Base_Where_List"/>
+        limit 0,1
     </select>
 </mapper>

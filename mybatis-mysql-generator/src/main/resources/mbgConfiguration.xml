@@ -66,7 +66,7 @@
         </sqlMapGenerator>
 
         <!-- 对应的 Mapper 接口类文件 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.qingmg.miscellaneous.shiro.dao"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.qingmg.miscellaneous.shiro.mapper"
                              targetProject="${target.javasource}">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>

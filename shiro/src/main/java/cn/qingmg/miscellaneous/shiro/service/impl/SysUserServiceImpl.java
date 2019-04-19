@@ -1,11 +1,13 @@
 package cn.qingmg.miscellaneous.shiro.service.impl;
 
+import cn.qingmg.miscellaneous.common.entity.Criteria;
 import cn.qingmg.miscellaneous.common.service.BaseServiceImpl;
-import cn.qingmg.miscellaneous.shiro.dao.SysUserMapper;
+import cn.qingmg.miscellaneous.shiro.mapper.SysUserMapper;
 import cn.qingmg.miscellaneous.shiro.pojo.SysUser;
 import cn.qingmg.miscellaneous.shiro.service.SysUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Description sys_user 服务实现层
@@ -16,11 +18,13 @@ import org.springframework.stereotype.Service;
 @Service("sysUserService")
 public class SysUserServiceImpl extends BaseServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
-    @Autowired(required = false)
-    SysUserMapper mapper;
+    @Override
+    public List<SysUser> query2List(Criteria criteria) {
+        return super.dao.query2List(criteria);
+    }
 
     @Override
-    public SysUser queryByUsername(String username) {
-        return mapper.queryByUsername(username);
+    public SysUser query2OneRecord(Criteria criteria) {
+        return super.dao.query2OneRecord(criteria);
     }
 }

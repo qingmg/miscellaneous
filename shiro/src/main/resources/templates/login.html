@@ -6,10 +6,11 @@
 </head>
 <body>
     <form action="/login">
-        <input type="text" name="username" />
-        <input type="password" name="password" />
-        <input type="checkbox" name="rememberMe" />
+        <input type="text" name="username" th:value="${username}" />
+        <input type="password" name="password" th:value="${password}" />
+        <input type="checkbox" name="rememberMe" th:checked="${rememberMe}" />
         <input type="submit" value="登陆" />
+        <span th:text="${message}"></span>
     </form>
 </body>
 </html>

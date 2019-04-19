@@ -1,5 +1,6 @@
 package cn.qingmg.miscellaneous.common.service;
 
+import cn.qingmg.miscellaneous.common.entity.Criteria;
 import com.github.pagehelper.Page;
 
 import java.io.Serializable;
@@ -12,6 +13,10 @@ import java.util.List;
  * @Version 1.0
  */
 public interface BaseService<T extends Serializable> {
+
+    List<T> query2List(Criteria criteria);
+
+    T query2OneRecord(Criteria criteria);
 
     List<T> queryAll();
 

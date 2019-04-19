@@ -10,6 +10,4 @@ import cn.qingmg.miscellaneous.shiro.pojo.SysUser;
  * @Version 1.0
  */
 public interface SysUserService extends BaseService<SysUser> {
-
-    SysUser queryByUsername(String username);
 }
