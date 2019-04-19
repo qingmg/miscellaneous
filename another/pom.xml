@@ -13,7 +13,7 @@
 
     <parent>
         <groupId>cn.qingmg.miscellaneous</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>miscellaneous</artifactId>
         <version>1.0.0</version>
     </parent>
 

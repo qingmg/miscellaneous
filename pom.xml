@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.qingmg.miscellaneous</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>miscellaneous</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
