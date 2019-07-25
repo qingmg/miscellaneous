@@ -58,5 +58,7 @@ design-patterns/design-patterns.iml
 design-patterns/target
 mybatis-mysql-generator/mybatis-mysql-generator.iml
 mybatis-mysql-generator/target
+websocket/websocket.iml
+websocket/target
 shiro/shiro.iml
 shiro/target
